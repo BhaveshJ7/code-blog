@@ -7,6 +7,7 @@
 
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import "../styles/index.scss"
 
 import Header from "./header"
 import "./layout.css"
@@ -26,6 +27,8 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
+        className="container"
+        id="content"
         style={{
           margin: `0 auto`,
           maxWidth: `var(--size-content)`,
