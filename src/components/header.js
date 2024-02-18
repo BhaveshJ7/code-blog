@@ -37,7 +37,7 @@ const Header = props => {
               <NavLink href="/team">Team</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/blogs">Blogs</NavLink>
+              <NavLink href="/blog">Blogs</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
