@@ -4,6 +4,9 @@ date: 2024-02-15 10:00:00
 author: "Bhavesh Jagtap"
 path: "/third-post"
 image: "../../images/image1.jpg"
+tags:
+  - design
+  - code
 ---
 
 CSS stands for Cascading Style Sheet. Where HTML is what defines the structure and content of a web page, a Cascading Style Sheet is a web document that allows you to change the appearance of the HTML.
