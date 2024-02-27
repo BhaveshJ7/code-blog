@@ -48,6 +48,18 @@ module.exports = {
     },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sass`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        enableIdentityWidget: false,
+      },
+    }`gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://medium.com/feed/opsnetic`,
+        name: `MediumBlog`,
+      },
+    },
   ],
 }

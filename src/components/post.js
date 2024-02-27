@@ -13,7 +13,9 @@ import { slugify } from "../util/utilityFunctions"
 
 const Post = ({ title, author, slug, date, body, fluid, tags }) => (
   <Card>
-    <Img className="card-image-top" fluid={fluid} />
+    <Link to="slug">
+      <Img className="card-image-top" fluid={fluid} />
+    </Link>
     <CardBody>
       <CardTitle>{title}</CardTitle>
       <CardSubtitle>
@@ -23,7 +25,7 @@ const Post = ({ title, author, slug, date, body, fluid, tags }) => (
       <CardText>{body}</CardText>
       <ul className="post-tags">
         {tags.map(tag => (
-          <li>
+          <li key={tag}>
             <Link to={`/tag/${slugify(tag)}`}>
               <Badge color="primary" className="text-uppercase">
                 {tag}
