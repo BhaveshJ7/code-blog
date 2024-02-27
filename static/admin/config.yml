@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Bhavesh/code-blog
+  repo: BhaveshJ7/code-blog
   branch: your-main-branch
 
 media_folder: static/assets
