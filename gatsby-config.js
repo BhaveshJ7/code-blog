@@ -48,12 +48,8 @@ module.exports = {
     },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-netlify-cms`,
-      options: {
-        enableIdentityWidget: false,
-      },
-    }`gatsby-transformer-remark`,
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
