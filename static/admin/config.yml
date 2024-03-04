@@ -17,3 +17,4 @@ collections:
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Tags", name: "tags", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
