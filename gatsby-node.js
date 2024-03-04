@@ -157,8 +157,8 @@ exports.createPages = async ({ actions, graphql }) => {
   })
 
   // Fetch data from Medium RSS feed
-  const username = "opsnetic"
-  const mediumRss = `https://medium.com/feed/${username}`
+  const username = "BhaveshJagtap"
+  const mediumRss = `https://medium.com/feed/@${username}`
   const ENDPOINT = `https://api.rss2json.com/v1/api.json?rss_url=${mediumRss}`
 
   const response = await fetch(ENDPOINT)
