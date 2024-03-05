@@ -22,7 +22,11 @@ const IndexPage = () => (
                 slug={node.fields.slug}
                 date={node.frontmatter.date}
                 body={node.excerpt}
-                fluid={node.frontmatter.image.childImageSharp.fluid}
+                fluid={
+                  node.frontmatter.image
+                    ? node.frontmatter.image.childImageSharp.fluid
+                    : null
+                }
                 tags={node.frontmatter.tags}
               />
             ))}
