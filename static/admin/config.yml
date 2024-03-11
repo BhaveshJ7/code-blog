@@ -3,7 +3,7 @@ backend:
   branch: master
 
 media_folder: src/images
-public_folder: static/images
+public_folder: ../../images/
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
