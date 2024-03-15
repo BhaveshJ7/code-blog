@@ -22,11 +22,7 @@ const IndexPage = () => (
                 slug={node.fields.slug}
                 date={node.frontmatter.date}
                 body={node.excerpt}
-                fluid={
-                  node.frontmatter.image
-                    ? node.frontmatter.image.childImageSharp.fluid
-                    : null
-                }
+                image={node.frontmatter.image}
                 tags={node.frontmatter.tags}
               />
             ))}
@@ -50,9 +46,11 @@ const indexQuery = graphql`
             tags
             image {
               childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  width: 600
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
               }
             }
           }

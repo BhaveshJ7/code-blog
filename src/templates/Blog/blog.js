@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import he from "he"
 
 const Blog = ({ pageContext }) => {
   const data = useStaticQuery(graphql`
@@ -30,14 +31,16 @@ const Blog = ({ pageContext }) => {
     edge => edge.node.link === pageContext.item.link
   )?.node
 
-  if (!pageContext) return null
+  if (!pageContext || !post) return null // Check if pageContext or post is null
   const { item } = pageContext
-  console.log(item)
+
+  // Decode HTML entities in the title
+  const decodedTitle = he.decode(post.title)
 
   return (
     <div>
       <header>
-        <h1>{post.title}</h1>
+        <h1>{decodedTitle}</h1> {/* Render the decoded title */}
       </header>
       <body>
         <p dangerouslySetInnerHTML={{ __html: post.content.encoded }} />

@@ -3,20 +3,22 @@ import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import { Badge, Card, CardBody, CardSubtitle } from "reactstrap"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { slugify } from "../util/utilityFunctions"
 
 const SinglePost = ({ data }) => {
   const post = data.markdownRemark.frontmatter
+  const image = getImage(post.image)
 
   return (
     <Layout>
       <SEO title={post.title} />
       <h1>{post.title}</h1>
       <Card>
-        <Img
+        <GatsbyImage
           className="card-image-top"
-          fluid={post.image.childImageSharp.fluid}
+          image={image}
+          alt={post.title}
         />
         <CardBody>
           <CardSubtitle>
@@ -51,9 +53,11 @@ export const postQuery = graphql`
         tags
         image {
           childImageSharp {
-            fluid(maxWidth: 700) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              width: 700
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
           }
         }
       }

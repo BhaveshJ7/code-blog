@@ -19,11 +19,15 @@
 
 const path = require("path")
 const { slugify } = require("./src/util/utilityFunctions")
+const he = require("he") // Import the he library for decoding HTML entities
+const fetch = require("node-fetch")
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === "MarkdownRemark") {
-    const slugFromTitle = slugify(node.frontmatter.title)
+    // Decode HTML entities in the title before generating the slug
+    const decodedTitle = he.decode(node.frontmatter.title)
+    const slugFromTitle = slugify(decodedTitle)
     createNodeField({
       node,
       name: "slug",
@@ -31,8 +35,6 @@ exports.onCreateNode = ({ node, actions }) => {
     })
   }
 }
-
-const fetch = require("node-fetch")
 
 // exports.createPages = ({ actions, graphql }) => {
 //   const { createPage } = actions
@@ -176,7 +178,9 @@ exports.createPages = async ({ actions, graphql }) => {
 
     // Create blog pages for individual posts from Medium
     json.items.forEach(item => {
-      const slug = item.title.toLowerCase().split(" ").join("-")
+      // Decode HTML entities in the title before generating the slug
+      const decodedTitle = he.decode(item.title)
+      const slug = slugify(decodedTitle)
       createPage({
         path: `/blog/${slug}`,
         component: BlogTemplate,
