@@ -53,7 +53,7 @@ module.exports = {
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
-        url: `https://medium.com/feed/@BhaveshJagtap`,
+        url: `https://medium.com/feed/opsnetic`,
         name: `MediumBlog`,
       },
     },

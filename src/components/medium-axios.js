@@ -10,7 +10,7 @@ const MediumAxios = () => {
   useEffect(() => {
     axios
       .get(
-        "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@BhaveshJagtap"
+        "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/opsnetic"
       )
       .then(response => setPosts(response.data.items))
       .catch(error => {
