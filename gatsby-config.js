@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
-        basePath: "", // or pathPrefix: '/'
+        basePath: ``, // or pathPrefix: '/'
       },
     },
     {
