@@ -2,7 +2,7 @@
 title: "HTML"
 date: 2024-02-14 10:00:00
 author: "Bhavesh Jagtap"
-image: "/images/image2.jpg"
+image: "../../images/image2.jpg"
 tags:
   - tutorial
   - web development
