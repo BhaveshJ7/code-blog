@@ -2,7 +2,7 @@
 title: "CSS"
 date: 2024-02-15 10:00:00
 author: "Bhavesh Jagtap"
-image: "../../images/image1.jpg"
+image: "/images/image1.jpg"
 tags:
   - design
   - code
