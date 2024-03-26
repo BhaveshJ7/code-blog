@@ -10,4 +10,4 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quod ipsam inv
 
 [Blog](https://opsnetic.com/blogs)
 
-![](/images/../../../images/icon.png)
+![null](/images/../../../images/icon.png)
