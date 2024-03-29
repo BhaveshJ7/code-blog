@@ -24,7 +24,6 @@ module.exports = {
       },
     },
     {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/static/img`,
@@ -39,7 +38,23 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `blurred`,
+          breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: `transparent`,
+          tracedSVGOptions: {},
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
