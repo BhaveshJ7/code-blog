@@ -68,10 +68,34 @@ module.exports = {
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-remark-plugins`,
+      options: {
+        plugins: [
+          {
+            resolve: require.resolve("./remove-leading-slash.js"), // Path to your preprocessor function
+          },
+          // Other markdown plugins you might be using
+        ],
+      },
+    },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-remark`,
+    // {
+    //   resolve: "gatsby-transformer-remark",
+    //   options: {
+    //     plugins: [
+    //       {
+    //         resolve: "gatsby-remark-relative-images",
+    //         options: {
+    //           name: "uploads",
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
