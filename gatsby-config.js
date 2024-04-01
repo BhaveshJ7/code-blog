@@ -69,7 +69,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-remark-plugins`,
+      resolve: `to-gatsby-remark-plugin`,
       options: {
         plugins: [
           {
