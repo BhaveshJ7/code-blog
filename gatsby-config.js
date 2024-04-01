@@ -82,7 +82,14 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-netlify-cms`,
-    `gatsby-transformer-remark`,
+    // `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`, // Assuming this is your markdown processing plugin
+      options: {
+        // ... other options for remark processing
+        basePath: ``, // Set basePath to an empty string
+      },
+    },
     // {
     //   resolve: "gatsby-transformer-remark",
     //   options: {
