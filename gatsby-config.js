@@ -73,7 +73,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: require.resolve("./src/utils/remove-leading-slash.js"), // Path to your preprocessor function
+            resolve: require.resolve("./src/util/remove-leading-slash.js"), // Path to your preprocessor function
           },
           // Other markdown plugins you might be using
         ],
